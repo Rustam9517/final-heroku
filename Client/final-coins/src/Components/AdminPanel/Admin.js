@@ -45,7 +45,7 @@ const AdminPanel = (props) => {
       headers: {
         "Content-Type": "application/json",
       },
-    }).then(props.dispatch(fetchProducts()));
+    }).then(props.dispatch(fetchFilterCoins()));
   };
   const { coins, search } = props;
   const coinSearch = search || search === [] ? search : coins;

@@ -50,8 +50,7 @@ const EditCoin = (props) => {
     setBack(imgBack);
   }, [props.location.state]);
 
-  const saveHandler = (e)=>{
-    e.preventDefault();
+  const saveHandler = ()=>{
     fetch(`/edit?id=${id}`,{
       method:'PUT',
       body:JSON.stringify({
@@ -155,7 +154,7 @@ const EditCoin = (props) => {
           value={back}
         />
         <ControlButtons className={"editButtons"}>
-          <a href=" #" onClick={saveHandler}>Save</a>
+          <Link to="/adminPanel" onClick={saveHandler}>Save</Link>
           <Link to={'/adminPanel'}>Cancel</Link>
         </ControlButtons>
       </EditRight>

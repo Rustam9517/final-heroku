@@ -19,8 +19,7 @@ const AddCoin = () =>{
     const [back, setBack] = useState("");
     const [type, setType] = useState("");
 
-    const addHandler = (e)=>{
-        e.preventDefault();
+    const addHandler = ()=>{
         if(name!=='' && face!=='' && year!=='' && price!=='' && country!=='' && metal!=='' && short!=='' && long!=='' && quality!=='' && weight!=='' && front!=='' && back!=='' ) {
             fetch(`/add`, {
                 method: 'POST',
@@ -48,6 +47,7 @@ const AddCoin = () =>{
             alert('Fill all fields')
         }
     };
+    console.log(type);
   return(
       <EditMain>
           <EditLeft>
@@ -129,9 +129,10 @@ const AddCoin = () =>{
           <EditRight>
               <p>Type</p>
               <select onChange={(event) => setType(event.target.value)} value={type} >
+                  <option>Type</option>
                   <option value="Investment">Investment</option>
                   <option value="Exclusive">Exclusive</option>
-                  <option value="Investment">Memorable</option>
+                  <option value="Memorable">Memorable</option>
               </select>
               <p>Link to obverse image</p>
               <input
@@ -148,7 +149,7 @@ const AddCoin = () =>{
                   placeholder={'Link to reverse image'}
               />
               <ControlButtons className={"editButtons"}>
-                  <a href=" #" onClick={addHandler} >Add</a>
+                  <Link to="/adminPanel" onClick={addHandler} >Add</Link>
                   <Link to={'/adminPanel'}>Cancel</Link>
               </ControlButtons>
           </EditRight>

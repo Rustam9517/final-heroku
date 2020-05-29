@@ -4,6 +4,10 @@ export const UserProfileMain = styled.div`
   display: flex;
   justify-content: space-around;
   width: 95%;
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    justify-content: space-between;
+    margin: 0 auto;
+  }
   h2 {
     width: 100%;
     text-align: center;
@@ -108,6 +112,9 @@ export const CoinHistoryList = styled.div`
   align-items: center;
   flex-direction: column;
   width: 30%;
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    width: 60%;
+  }
   @media (min-width: 320px) and (max-width: 480px){
     width: 100%;
   }  
@@ -161,6 +168,9 @@ export const UserTotal = styled.div`
   align-items: flex-start;
   flex-direction: column;
   width: 35%;
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    width: 40%;
+  }
   @media (min-width: 320px) and (max-width: 480px){
      width: 100%;
      justify-content: center;
